@@ -62,7 +62,7 @@ export function Button3({ onClick, url }) {
   return (
     <div
       onClick={url ? () => router.push(url) : onClick}
-      className="max-w-max px-5 mt-5 w-full"
+      className="max-w-4xl mx-auto px-5 md:mt-10 mt-5 w-full"
     >
       <button className="flex border pr-5 pl-3 border-current py-1 rounded gap-1 hover:text-white text-zinc-400">
         <span>

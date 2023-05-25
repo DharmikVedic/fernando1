@@ -35,7 +35,7 @@ export function Button2({ onClick, url }) {
   return (
     <div
       onClick={url ? () => router.push("/") : onClick}
-      className="max-w-max w-full absolute"
+      className="max-w-max md:hidden block w-full absolute"
     >
       <button className="flex gap-1  md:p-0 p-1 md:bg-transparent bg-white rounded-full md:rounded-none text-zinc-800 md:text-white hover:text-blue-500">
         <span>

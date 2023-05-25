@@ -174,7 +174,7 @@ export default function TarotCard2({}) {
                     <div className="max-w-5xl md:px-5 mx-auto flex flex-col text-center gap-5">
                       <div className="flex relative gap-5 items-center">
                         <Button2 url="/" />
-                        <h1 className="w-full md:text-5xl title text-center text-4xl  font-bold">
+                        <h1 className="w-full md:text-5xl md:pl-0 pl-10 title text-center text-4xl  font-bold">
                           Yes No Tarot Prediction
                         </h1>
                       </div>

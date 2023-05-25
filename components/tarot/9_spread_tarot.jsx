@@ -243,7 +243,7 @@ function TatorPast({ title, arr, handleUpdate, identity, shuffle, active }) {
 export function TarotCard({ frontImage, backImage, handle, active, shuffle }) {
   const { transform, opacity } = useSpring({
     opacity: active ? 1 : 0,
-    transform: `perspective(600px) rotateY(${active ? 180 : 0}deg)`,
+    transform: `perspective(600px) rotateY(${!active ? 180 : 0}deg)`,
     config: { mass: 5, tension: 500, friction: 80 },
   });
   return (

@@ -29,7 +29,6 @@ export default function SpreadTarot9() {
   const [response, setResponse] = useState({});
   const [shuffle, setShuffle] = useState(false);
   const [randomId, setRandomId] = useState(randomIntArrayInRange(1, 78, 9));
-
   const [state, setState] = useState(initialState);
 
   if (shuffle) {

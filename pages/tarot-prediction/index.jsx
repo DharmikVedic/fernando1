@@ -412,11 +412,13 @@ function TarotResponseCard({ data, number, identity }) {
   );
 }
 
-export const randomIntArrayInRange = (min, max, n = 1) =>
-  Array.from(
+export const randomIntArrayInRange = (min, max, n = 1) => {
+  const numbers = Array.from(
     { length: n },
     () => Math.floor(Math.random() * (max - min + 1)) + min
   );
+  return numbers;
+};
 
 function getTarotName(id) {
   const a = tarotCards.filter((item) => item.id == id);

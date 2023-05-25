@@ -1,4 +1,4 @@
-import { Button } from "@/components/utils/buttons";
+import { Button, Button2, Button3 } from "@/components/utils/buttons";
 import { FetchApi } from "@/components/utils/fetchapi";
 import { Loader2 } from "@/components/utils/loader";
 import React, { useCallback, useState } from "react";
@@ -173,10 +173,11 @@ export default function TarotPrediction() {
         `}
       </style>
 
-      <div className='bg-[url("/imgs/bg1.png")] md:py-24 py-24 md:px-5 bg-cover bg-center min-h-screen w-full'>
+      <div className='bg-[url("/imgs/bg1.png")] md:py-24 py-14 md:px-5 bg-cover bg-center min-h-screen w-full'>
         <div className="bg-zinc-900/80 overflow-hidden px-5 py-10 md:p-20 flex flex-col gap-10 md:rounded-[20px] max-w-4xl mx-auto w-full">
           {Object.keys(response).length > 0 ? (
             <Button
+              extraStyle="md:block hidden"
               onClick={() => {
                 setResponse({});
                 setUpdate(initialState);
@@ -188,25 +189,28 @@ export default function TarotPrediction() {
               }}
             />
           ) : (
-            <Button url="/" />
+            <Button extraStyle="md:block hidden" url="/" />
           )}
           {loader ? (
             <Loader2 />
           ) : (
             <>
               {Object.keys(response).length === 0 ? (
-                <div className="md:mt-0 px-5 mt-14 flex flex-col">
+                <div className=" px-5  flex flex-col">
                   <div className="flex flex-col mx-auto gap-5 text-center max-w-4xl">
-                    <h1 className="md:text-5xl text-center title text-4xl  font-bold">
-                      Tarot Prediction
-                    </h1>
+                    <div className="flex relative gap-5 items-center">
+                      <Button2 url="/" />
+                      <h1 className="md:text-5xl text-center title text-4xl w-full font-bold">
+                        Tarot Prediction
+                      </h1>
+                    </div>
                     <p className="md:text-lg  text-zinc-300">
                       Insight into Your Future: Get a Free Tarot Reading for
                       Your Love, Career, and Financial Path
                     </p>
                   </div>
 
-                  <div className=" flex  mt-10 h-[350px] relative w-full max-w-4xl mx-auto gap-3 sm:gap-5 md:gap-10">
+                  <div className=" flex  mt-10 h-[200px] md:h-[350px] relative w-full max-w-4xl mx-auto gap-3 sm:gap-5 md:gap-10">
                     {["love", "career", "finance"].map((item, i) => (
                       <div
                         style={{
@@ -297,9 +301,12 @@ export default function TarotPrediction() {
                 </div>
               ) : (
                 <div>
-                  <h2 className="md:text-5xl text-center  title text-4xl  font-bold">
-                    Tarot Prediction
-                  </h2>
+                  <div className="flex relative gap-5 items-center">
+                    <Button2 url="/" />
+                    <h2 className="md:text-5xl text-center w-full  title text-4xl  font-bold">
+                      Tarot Prediction
+                    </h2>
+                  </div>
 
                   <div className=" max-w-5xl divide-y divide-zinc-500 mx-auto flex flex-col">
                     <TarotResponseCard
@@ -324,6 +331,7 @@ export default function TarotPrediction() {
             </>
           )}
         </div>
+        <Button3 url={"/"} />
       </div>
     </div>
   );

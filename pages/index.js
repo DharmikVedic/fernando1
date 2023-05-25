@@ -3,7 +3,7 @@ import React from "react";
 
 export default function TarotIndex() {
   return (
-    <div className='bg-[url("/imgs/bg1.png")] md:py-24 py-24 md:px-5 bg-cover bg-center min-h-screen w-full'>
+    <div className='bg-[url("/imgs/bg1.png")] md:py-24 py-14 md:px-5 bg-cover bg-center min-h-screen w-full'>
       <div className=" max-w-5xl mx-auto px-5">
         <div className="flex flex-col gap-14">
           <h1 className="md:text-6xl  font-bold text-white sm:text-5xl text-4xl text-center ">
@@ -47,8 +47,8 @@ function TarotCard({ title, desc, button, img, bg, link }) {
       <div
         className={`${bg} rounded-[10px] flex sm:flex-row md:items-start items-center flex-col-reverse gap-5 md:gap-14 md:p-8 p-5`}
       >
-        <div className="flex flex-col gap-5">
-          <h2 className="md:text-2xl font-semibold text-xl">{title}</h2>
+        <div className="flex flex-col text-center gap-5">
+          <h2 className="md:text-2xl font-semibold text-2xl">{title}</h2>
           <p className="md:text-base">{desc}</p>
           <button className="hover:bg-zinc-800 hover:text-white duration-100 ease-linear bg-white px-5 py-2 rounded-md">
             {button}

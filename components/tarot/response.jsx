@@ -1,5 +1,6 @@
 import { useTransition, a } from "@react-spring/web";
 import React, { useState } from "react";
+import { Button3 } from "../utils/buttons";
 
 export default function Response({ data }) {
   const [activeTab, setActiveTab] = useState("past");
@@ -60,7 +61,7 @@ export default function Response({ data }) {
         `}
       </style>
 
-      <div className='bg-[url("/imgs/bg1.png")] md:py-24 py-24 md:px-5 bg-cover bg-center min-h-screen w-full'>
+      <div className='bg-[url("/imgs/bg1.png")] md:py-24 py-20 md:px-5 bg-cover bg-center min-h-screen w-full'>
         <div className="bg-zinc-900/80 overflow-hidden px-5 py-10 md:p-20 flex flex-col gap-10 md:rounded-[20px] max-w-4xl mx-auto w-full">
           <div className="overflow-x-scroll  scroll-container scroll-smooth">
             <div className="grid  scroll-container overflow-x-scroll min-w-[500px]  grid-cols-3 divide-x divide-zinc-500">
@@ -108,6 +109,7 @@ export default function Response({ data }) {
             );
           })}
         </div>
+        <Button3 url={"/"} />
       </div>
     </>
   );

@@ -1,13 +1,10 @@
-import useMediaSIze from "@/components/context/useMediaSIze";
-import { Button } from "@/components/utils/buttons";
+import { Button, Button2, Button3 } from "@/components/utils/buttons";
 import { FetchApi } from "@/components/utils/fetchapi";
 import { Loader2 } from "@/components/utils/loader";
-// import { Loader2 } from "../../components/utils/loader";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
 
 import React, { useCallback, useEffect, useState } from "react";
 import { randomIntArrayInRange } from "../tarot-prediction";
-// import { Button } from "@/components/cards/calculatorCard";
 
 export default function TarotCard2({}) {
   const [response, setResponse] = useState({});
@@ -159,12 +156,12 @@ export default function TarotCard2({}) {
           }
         `}
       </style>
-      <div className='bg-[url("/imgs/bg1.png")] md:py-24 py-24 md:px-5 bg-cover bg-center min-h-screen w-full'>
+      <div className='bg-[url("/imgs/bg1.png")] md:py-24 py-14 md:px-5 bg-cover bg-center min-h-screen w-full'>
         <div className="bg-zinc-900/80 overflow-hidden px-5 py-10 md:p-20 flex flex-col gap-10 md:rounded-[20px] max-w-4xl mx-auto w-full">
           {Object.keys(response).length > 0 ? (
-            <Button onClick={handleReset} />
+            <Button onClick={handleReset} extraStyle="md:block hidden" />
           ) : (
-            <Button url="/" />
+            <Button url="/" extraStyle="md:block hidden" />
           )}
           {loader ? (
             <Loader2 />
@@ -172,11 +169,14 @@ export default function TarotCard2({}) {
             <>
               {Object.keys(response).length == 0 ? (
                 <>
-                  <div className="w-full">
-                    <div className="max-w-5xl px-5 mx-auto flex flex-col text-center gap-5">
-                      <h1 className="md:text-5xl title text-center text-4xl  font-bold">
-                        Yes No Tarot Prediction
-                      </h1>
+                  <div className="w-full ">
+                    <div className="max-w-5xl md:px-5 mx-auto flex flex-col text-center gap-5">
+                      <div className="flex relative gap-5 items-center">
+                        <Button2 url="/" />
+                        <h1 className="w-full md:text-5xl title text-center text-4xl  font-bold">
+                          Yes No Tarot Prediction
+                        </h1>
+                      </div>
                       <p className="md:text-lg text-zinc-300">
                         Tarot Magic in Seconds: Your Free Yes/No Tarot Reading
                         Awaits
@@ -184,7 +184,7 @@ export default function TarotCard2({}) {
                       <span className="md:text-base text-sm bg-sky-600 text-white arrow  px-5 md:px-10 py-2 max-w-max rounded-full mx-auto  mt-5">
                         SELECT A CARDS FROM THE DECK BELOW
                       </span>
-                      <div className="flex  relative h-[200px] md:h-[280px] justify-center gap-2 w-full mt-20">
+                      <div className="flex  relative h-[150px] md:h-[280px] justify-center gap-2 w-full mt-20">
                         {props.map(({ x, y, rot, scale }, i) => {
                           const spreadAngle = 90; // Adjust this value to control the spread angle
                           const spreadOffset = (CARD_LENGTH - 1) / 2;
@@ -257,10 +257,13 @@ export default function TarotCard2({}) {
                   </div>
                 </>
               ) : (
-                <div className="max-w-5xl mx-auto flex flex-col md:gap-24 gap-10  px-5">
-                  <h1 className="md:text-5xl text-center title text-4xl  font-bold">
-                    YES/NO TAROT READING
-                  </h1>
+                <div className="max-w-5xl mx-auto flex flex-col md:gap-24 gap-10  md:px-5">
+                  <div className="flex relative gap-5 items-center">
+                    <Button2 url="/" />
+                    <h1 className="md:text-5xl md:pl-0 pl-10 text-center title text-4xl  font-bold">
+                      YES/NO TAROT READING
+                    </h1>
+                  </div>
                   <div className="flex md:flex-row flex-col md:gap-14 gap-10 items-center ">
                     <div className="w-full max-w-[200px]">
                       <img
@@ -302,6 +305,7 @@ export default function TarotCard2({}) {
             </>
           )}
         </div>
+        <Button3 url={"/"} />
       </div>
     </>
   );

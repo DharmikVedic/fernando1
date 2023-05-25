@@ -196,11 +196,11 @@ export default function TarotPrediction() {
           ) : (
             <>
               {Object.keys(response).length === 0 ? (
-                <div className=" px-5  flex flex-col">
+                <div className=" md:px-5  flex flex-col">
                   <div className="flex flex-col mx-auto gap-5 text-center max-w-4xl">
                     <div className="flex relative gap-5 items-center">
                       <Button2 url="/" />
-                      <h1 className="md:text-5xl text-center title text-4xl w-full font-bold">
+                      <h1 className="md:text-5xl md:pl-0 pl-10 text-center title text-4xl w-full font-bold">
                         Tarot Prediction
                       </h1>
                     </div>
@@ -218,7 +218,7 @@ export default function TarotPrediction() {
                         }}
                         className="absolute"
                       >
-                        <p className="md:text-2xl text-white capitalize text-center text-xl">
+                        <p className="md:text-2xl text-white capitalize text-center text-lg sm:text-xl">
                           {item}
                         </p>
                       </div>

@@ -113,6 +113,7 @@ export default function TarotCard2({}) {
 
   const handleReset = () => {
     setResponse({});
+    setHover(null);
     api.start((i) => ({
       ...to(i),
       onRest: () => {

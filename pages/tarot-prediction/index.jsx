@@ -14,11 +14,7 @@ export default function TarotPrediction() {
   const [response, setResponse] = useState({});
   const [loader, setLoader] = useState(false);
   const [buttonState, setButtonState] = useState(false);
-  const [randomId, setRandomId] = useState({
-    love: randomIntArrayInRange(1, 78, 1)[0],
-    career: randomIntArrayInRange(1, 78, 1)[0],
-    finance: randomIntArrayInRange(1, 78, 1)[0],
-  });
+  const [randomId, setRandomId] = useState(randomIntArrayInRange(1, 78, 3));
   const [update, setUpdate] = useState(initialState);
 
   const [prediction, setPrediction] = useState([
@@ -80,11 +76,7 @@ export default function TarotPrediction() {
 
   const shuffleCards = (array) => {
     const shuffledPrediction = [...array];
-    const obj = {
-      love: randomIntArrayInRange(1, 78, 1)[0],
-      career: randomIntArrayInRange(1, 78, 1)[0],
-      finance: randomIntArrayInRange(1, 78, 1)[0],
-    };
+    const obj = randomIntArrayInRange(1, 78, 3);
     setRandomId(obj);
     for (let i = shuffledPrediction.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -181,11 +173,7 @@ export default function TarotPrediction() {
               onClick={() => {
                 setResponse({});
                 setUpdate(initialState);
-                setRandomId({
-                  love: randomIntArrayInRange(1, 78, 1)[0],
-                  career: randomIntArrayInRange(1, 78, 1)[0],
-                  finance: randomIntArrayInRange(1, 78, 1)[0],
-                });
+                setRandomId(randomIntArrayInRange(1, 78, 3));
               }}
             />
           ) : (
@@ -242,9 +230,7 @@ export default function TarotPrediction() {
                               handle={() => handleTarot(card.category)}
                               frontImage="/imgs/tarotcard.png"
                               active={update[card.category]}
-                              backImage={`/tarot/${
-                                randomId[card.category]
-                              }.png`}
+                              backImage={`/tarot/${randomId[i]}.png`}
                             />
                           </animated.div>
                         </>
@@ -312,18 +298,18 @@ export default function TarotPrediction() {
                     <TarotResponseCard
                       identity="love"
                       data={response.love}
-                      number={randomId.love}
+                      number={randomId[0]}
                     />
 
                     <TarotResponseCard
                       identity="career"
                       data={response.career}
-                      number={randomId.career}
+                      number={randomId[1]}
                     />
                     <TarotResponseCard
                       identity="finance"
                       data={response.finance}
-                      number={randomId.finance}
+                      number={randomId[2]}
                     />
                   </div>
                 </div>
@@ -412,13 +398,31 @@ function TarotResponseCard({ data, number, identity }) {
   );
 }
 
-export const randomIntArrayInRange = (min, max, n = 1) => {
-  const numbers = Array.from(
-    { length: n },
-    () => Math.floor(Math.random() * (max - min + 1)) + min
-  );
+// export const randomIntArrayInRange = (min, max, n = 1) => {
+//   const numbers = Array.from(
+//     { length: n },
+//     () => Math.floor(Math.random() * (max - min + 1)) + min
+//   );
+//   return numbers;
+// };
+
+export function randomIntArrayInRange(start, end, count = 1) {
+  if (count <= 0 || end - start + 1 < count) {
+    return [];
+  }
+
+  var numbers = [];
+
+  while (numbers.length < count) {
+    var randomNumber = Math.floor(Math.random() * (end - start + 1)) + start;
+
+    if (!numbers.includes(randomNumber)) {
+      numbers.push(randomNumber);
+    }
+  }
+
   return numbers;
-};
+}
 
 function getTarotName(id) {
   const a = tarotCards.filter((item) => item.id == id);

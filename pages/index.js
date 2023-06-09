@@ -11,7 +11,7 @@ export default function TarotIndex() {
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <TarotCard
-              link="/yes-no-tarot"
+              link="/yes-no-tarot/prediction"
               bg="bg-gradient-to-r from-blue-200 to-purple-200"
               img="/imgs/yes-no-tarot.png"
               title="Yes / No Tarot Prediction"
@@ -19,7 +19,7 @@ export default function TarotIndex() {
               button="Pick Up Card"
             />
             <TarotCard
-              link="//tarot-prediction"
+              link="/tarot-prediction/prediction"
               bg="bg-gradient-to-r from-lime-100 to-blue-200"
               img="/imgs/tarot3.png"
               title="Tarot Prediction"
@@ -27,7 +27,7 @@ export default function TarotIndex() {
               button="Pick Up Card"
             />
             <TarotCard
-              link="/9-spread-tarot"
+              link="/9-spread-tarot/prediction"
               bg="bg-gradient-to-r from-rose-100 to-blue-200"
               img="/imgs/yes-no-tarot.png"
               title="Discovering Insights: The 9-Card Spread Tarot"
@@ -41,7 +41,7 @@ export default function TarotIndex() {
   );
 }
 
-function TarotCard({ title, desc, button, img, bg, link }) {
+export function TarotCard({ title, desc, button, img, bg, link }) {
   return (
     <Link href={link}>
       <div

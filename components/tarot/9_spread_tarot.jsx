@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSpring, a } from "@react-spring/web";
 import { LoginLoader } from "../utils/loader";
 import Response, { getFilterObject } from "@/components/tarot/response";
-import { randomIntArrayInRange } from "@/pages/tarot-prediction";
+import { randomIntArrayInRange } from "@/pages/tarot-prediction/prediction";
 import { Button, Button2, Button3 } from "../utils/buttons";
 const TarotResponse = require("../../components/jsonData/9-spread-tarot-response");
 

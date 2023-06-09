@@ -109,7 +109,7 @@ export default function Response({ data }) {
             );
           })}
         </div>
-        <Button3 url={"/"} />
+        {/* <Button3 url={"/"} /> */}
       </div>
     </>
   );

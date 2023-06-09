@@ -196,7 +196,7 @@ export default function SpreadTarot9() {
                 Get My Reading
               </button>
             </div>
-            <Button3 url={"/"} />
+            {/* <Button3 url={"/"} /> */}
           </div>
         </>
       ) : (

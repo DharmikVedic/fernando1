@@ -306,7 +306,7 @@ export default function TarotCard2({}) {
             </>
           )}
         </div>
-        <Button3 url={"/"} />
+        {/* <Button3 url={"/"} /> */}
       </div>
     </>
   );

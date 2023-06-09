@@ -317,7 +317,7 @@ export default function TarotPrediction() {
             </>
           )}
         </div>
-        <Button3 url={"/"} />
+        {/* <Button3 url={"/"} /> */}
       </div>
     </div>
   );
